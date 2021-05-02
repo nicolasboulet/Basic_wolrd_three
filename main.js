@@ -25,6 +25,7 @@ class BasicWorldDemo {
 
     const fov = 60;
     const aspect = 1920 / 1080;
+    //const aspect = innerWidth / innerHeight;
     const near = 1.0;
     const far = 1000.0;
     this._camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
@@ -49,7 +50,7 @@ class BasicWorldDemo {
     light.shadow.camera.bottom = -100;
     this._scene.add(light);
 
-    light = new THREE.AmbientLight(0x101010);
+    light = new THREE.AmbientLight(0x909090);
     this._scene.add(light);
 
     const controls = new OrbitControls(
@@ -59,12 +60,18 @@ class BasicWorldDemo {
 
     const loader = new THREE.CubeTextureLoader();
     const texture = loader.load([
-        './resources/posx.jpg',
-        './resources/negx.jpg',
-        './resources/posy.jpg',
-        './resources/negy.jpg',
-        './resources/posz.jpg',
-        './resources/negz.jpg',
+        // './resources/posx.jpg',
+        // './resources/negx.jpg',
+        // './resources/posy.jpg',
+        // './resources/negy.jpg',
+        // './resources/posz.jpg',
+        // './resources/negz.jpg',
+        './resources/px.bmp',
+        './resources/nx.bmp',
+        './resources/py.bmp',
+        './resources/ny.bmp',
+        './resources/pz.bmp',
+        './resources/nz.bmp',
     ]);
     this._scene.background = texture;
 
